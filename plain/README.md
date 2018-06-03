@@ -14,14 +14,14 @@
 sudo apt-get -y install openjdk-8-jdk
 
 ■tomcat7落として解凍
+cd ~/src
 wget http://ftp.kddilabs.jp/infosystems/apache/tomcat/tomcat-7/v7.0.88/bin/apache-tomcat-7.0.88.tar.gz
 tar -zxvf apache-tomcat-7.0.88.tar.gz
-cd apache-tomcat-7.0.88
 
 ■環境変数を.bashrcに設定
 cat << EOS >> .bashrc
 
-### Java Tomcat
+### Java(open-jdk) Tomcat
 JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export JAVA_HOME
 PATH=$PATH:$JAVA_HOME/bin
@@ -39,7 +39,7 @@ echo $CATALINA_BASE
 EOS
 
 ■起動
-sh ./bin/catalina.sh start
+sh $CATALINA_HOME/bin/catalina.sh start
 ps ax | grep tomcat
 curl http://localhost:8080/
 
