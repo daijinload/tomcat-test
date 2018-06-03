@@ -12,8 +12,7 @@ javac -classpath $CATALINA_HOME/lib/servlet-api.jar Hello.java
 
 ■war化
 cd sample/
-jar cf ../sample.war .
-mv ../sample.war $CATALINA_HOME/webapps
+jar cf $CATALINA_HOME/webapps/sample.war .
 
 ■起動
 # sh $CATALINA_HOME/bin/catalina.sh stop
