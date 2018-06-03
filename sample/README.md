@@ -1,7 +1,7 @@
 
 公式サンプルを使って、シンプルなサーブレットを起動してみる
 
-(公式サンプル)[https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/]
+[公式サンプル](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/)
 
 # 動かすまでの手順
 
