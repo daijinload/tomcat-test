@@ -18,21 +18,25 @@ wget http://ftp.kddilabs.jp/infosystems/apache/tomcat/tomcat-7/v7.0.88/bin/apach
 tar -zxvf apache-tomcat-7.0.88.tar.gz
 cd apache-tomcat-7.0.88
 
-■JAVA_HOMEを設定
+■環境変数を.bashrcに設定
+cat << EOS >> .bashrc
+
+### Java Tomcat
 JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 export JAVA_HOME
 PATH=$PATH:$JAVA_HOME/bin
 export PATH
 echo $JAVA_HOME
 
-■CATALINA_HOMEとCATALINA_BASEも設定
-CATALINA_HOME=$(pwd)
+CATALINA_HOME=~/src/apache-tomcat-7.0.88
 export CATALINA_HOME
 echo $CATALINA_HOME
 
 CATALINA_BASE=$CATALINA_HOME
 export CATALINA_BASE
 echo $CATALINA_BASE
+
+EOS
 
 ■起動
 sh ./bin/catalina.sh start
