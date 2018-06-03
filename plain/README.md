@@ -1,5 +1,12 @@
 
-```
+* tomcatディレクトリ直下の `webapps` フォルダに、warファイルを置くと自動で解凍＆展開してくれる。
+* warファイルは単なるzipファイルなので、 `unzip` コマンドで解凍できる。
+* springもtomcatも単なるjarでしかない。javaから起動しているだけのイメージ。
+
+
+# 動かすまでの手順
+
+```bash
 
 ■Java8インストール
 sudo apt-get -y install openjdk-8-jdk
